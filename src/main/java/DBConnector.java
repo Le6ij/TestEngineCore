@@ -28,15 +28,17 @@ public class DBConnector {
      * Name of the table system is currently working with
      *                  can be set with setTable(String tableName)
      */
-    public String tableName=null;
+    public String tableName=TECore.commonTable;
 
+    public DBConnector(){
+    }
     /**
      *Initiates a connection with DB only by DB alias
      *
      * @param alias name of the DB server you want to connect uses aliases provided in tnsnames.ora
      * @throws Exception
      */
-    public static void connect(String alias)throws Exception{
+    public void connect(String alias){
         try {
             System.setProperty("oracle.net.tns_admin", TECore.projectPath+"/src/main/resources");
             String dbURL = "jdbc:oracle:thin:@"+alias;
@@ -48,11 +50,11 @@ public class DBConnector {
         }
     }
 
-    public static void connect()throws Exception{
+    public void connect(){
         connect(TECore.endpoint);
     }
 
-    private static final Map<String, String> getConnDetails(String alias) throws Exception {
+    private static final Map<String, String> getConnDetails(String alias){
         Map<String,String> connectionDetails = new HashMap<String,String>();
 
         String content = null;
@@ -84,7 +86,11 @@ public class DBConnector {
         this.tableName = tableName;
     }
 
-    public List fetchDataFromTable(String sql, Object... params) throws Exception{
+    public String getTable(){
+        return this.tableName;
+    }
+
+    public List fetchDataFromTable(String sql, Object... params){
         return fetchDataFromTable(this.tableName, sql, params);
     }
 
@@ -102,11 +108,11 @@ public class DBConnector {
      * @return generic List with records fetched from DB as it's elements
      * @throws Exception
      */
-    public static List fetchDataFromTable(String tableName, String sql, Object... params) throws Exception{
+    public List fetchDataFromTable(String tableName, String sql, Object... params){
         tableName = "tables."+tableName;
         Class<?> cls = null;
         try {
-            //Try to find class with the provided name.
+            ///Try to find class with the provided name.
             cls = Class.forName(tableName);
         } catch (ClassNotFoundException e) {
             System.out.println("Unable to find matching table class");
@@ -114,7 +120,7 @@ public class DBConnector {
         }
         Method method = null;
         try {
-            //Try to find method "where" in the  found class.
+            ///Try to find method "where" in the  found class.
             // Must define init param types, String and Object array in this case.
             method = cls.getDeclaredMethod ("where", String.class, Object[].class);
         } catch (NoSuchMethodException e) {
@@ -123,7 +129,7 @@ public class DBConnector {
         }
         List fetchedRows = null;
         try {
-            //Try to invoke found method "where" with provided parameters.
+            ///Try to invoke found method "where" with provided parameters.
             fetchedRows = (List) method.invoke (tableName, sql, params);
         } catch (IllegalAccessException e) {
             System.out.println("Unable to convert fetched results to List");
@@ -132,9 +138,6 @@ public class DBConnector {
             System.out.println("Unable to use Reflection to call matching method");
             e.printStackTrace();
         }
-//        for(Object u: fetchedRows){
-//            System.out.println(u);
-//        }
         return fetchedRows;
     }
 
