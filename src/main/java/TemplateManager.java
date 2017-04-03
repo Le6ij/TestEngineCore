@@ -96,6 +96,11 @@ public class TemplateManager{
         } return null;
     }
 
+    /**
+     * Get Xpath to the provided element
+     * @param elt Element that path will be constucted for
+     * @return
+     */
     private static String getElementXpath(Element elt){
         String path = "";
         try{
