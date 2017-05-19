@@ -12,9 +12,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="DBConnector" target="1.5" />
-      <module name="TestEngine" target="1.5" />
-      <module name="TestEngineCore" target="1.5" />
+      <module name="TestEngineCore" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

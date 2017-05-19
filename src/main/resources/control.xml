@@ -1,0 +1,67 @@
+<Values version="2.0">
+  <record name="tns:CustomerOrderResponse" javaclass="com.wm.util.Values">
+    <record name="tns:Header" javaclass="com.wm.util.Values">
+      <value name="header:MessageId">1556972</value>
+      <value name="header:ConversationId">48edaca9-60ed-11e6-82a9-e144a7c46bbc</value>
+      <value name="header:BusinessProcessId">AC4C3F68-5FA1-11e6-8402-001A4A10231F</value>
+      <value name="header:MessageTargetNamespace">http://www.tele2.com/CustomerOrderRequest/Canonical/v04</value>
+      <value name="header:MessagePriority">9</value>
+      <value name="header:Timestamp">2016-08-13 02:31:47.145</value>
+      <value name="header:Sender">SDM_NL</value>
+      <value name="header:Recipient">SiebelCRM_NL</value>
+      <value name="header:LegalEntity">27</value>
+      <value name="header:PayloadEncoding">Plain</value>
+    </record>
+    <record name="tns:Body" javaclass="com.wm.util.Values">
+      <record name="tns:OrderHeader" javaclass="com.wm.util.Values">
+        <value name="tns:OrderId">1-2147591603</value>
+        <value name="tns:OrderIdVersion">1</value>
+      </record>
+      <array name="tns:OrderItem" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="tns:OrderItemId">1-ZIMCAM</value>
+          <value name="tns:Status">IN_PROGRESS</value>
+          <value name="tns:SubStatus">SIM_ALLOCATED</value>
+          <value name="tns:StatusCode"> </value>
+          <value name="tns:StatusReason"> </value>
+          <value name="tns:StatusChangeDateTime">2016-08-13T02:31:46</value>
+          <array name="tns:Product" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="tns:ProductType">SIM_CARD</value>
+              <array name="tns:AdditionalProductDetails" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="tns:Name">IMSI</value>
+                  <value name="tns:Value">204027001614900</value>
+                </record>
+                <record javaclass="com.wm.util.Values">
+                  <value name="tns:Name">ICCID</value>
+                  <value name="tns:Value">89314226511115576160</value>
+                </record>
+                <record javaclass="com.wm.util.Values">
+                  <value name="tns:Name">PIN1</value>
+                  <value name="tns:Value">0000</value>
+                </record>
+                <record javaclass="com.wm.util.Values">
+                  <value name="tns:Name">PIN2</value>
+                  <value name="tns:Value">7521</value>
+                </record>
+                <record javaclass="com.wm.util.Values">
+                  <value name="tns:Name">PUK1</value>
+                  <value name="tns:Value">78570490</value>
+                </record>
+                <record javaclass="com.wm.util.Values">
+                  <value name="tns:Name">PUK2</value>
+                  <value name="tns:Value">93658674</value>
+                </record>
+                <record javaclass="com.wm.util.Values">
+                  <value name="tns:Name">NEW_ICCID</value>
+                  <value name="tns:Value">89314226511115576160</value>
+                </record>
+              </array>
+            </record>
+          </array>
+        </record>
+      </array>
+    </record>
+  </record>
+</Values>

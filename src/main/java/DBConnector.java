@@ -54,7 +54,7 @@ public class DBConnector {
         connect(TECore.endpoint);
     }
 
-    private static final Map<String, String> getConnDetails(String alias){
+    private static Map<String, String> getConnDetails(String alias){
         Map<String,String> connectionDetails = new HashMap<String,String>();
 
         String content = null;

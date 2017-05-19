@@ -34,8 +34,6 @@ public class TemplateManager{
     }
 
     public void getTemplates(String tableName, String sql, Object... params){
-        String data;
-        String component;
         //Check if there is an existing connection to DB otherwise connect to default
         if(!Base.hasConnection()){
             dbConnector.connect();
@@ -46,95 +44,45 @@ public class TemplateManager{
         }
     }
 
-    public void getTemplates(String sql, Object... params){
-        getTemplates(dbConnector.tableName,sql,params);
-    }
-
-    public void parseXML(Element e){
+    public static void maskDynamicFields(Element e){
         NodeList children = e.getChildNodes();
         //HashMap<Node,Integer> map = new HashMap<Node, Integer>();
-        Object[] arr = new Object [2];
+        Object[] arr;
         for (int i = 0; i < children.getLength(); i++) {
             //Node n = children.item(i);
-            Node n = null;
-            if(getNextElementNode(children,i)!= null){
-                arr = getNextElementNode(children,i);
+            Node n;
+            if(XMLUtils.getNextElementNode(children,i)!= null){
+                arr = XMLUtils.getNextElementNode(children,i);
                 n = (Node)arr[0];
                 i = (Integer)arr[1];
                 e = (Element) n;
                 if (e.getTagName() == "value"){
                     if(e.getAttribute("name").contains(":Name")){
-                        System.out.print(getElementXpath(e).substring(0,getElementXpath(e).lastIndexOf("/")+1));
+                        System.out.print(XMLUtils.getElementXpath(e,true).substring(0,XMLUtils.getElementXpath(e,true).lastIndexOf("/")+1));
                         System.out.print(e.getTextContent()+" = ");
-                        if(getNextElementNode(children,i)!= null) {
-                            arr = getNextElementNode(children, i+1);
+                        if(XMLUtils.getNextElementNode(children,i)!= null) {
+                            arr = XMLUtils.getNextElementNode(children, i+1);
                             n = (Node) arr[0];
                             i = (Integer) arr[1];
                             e = (Element) n;
                             System.out.println(e.getTextContent());
                         }
-
                     } else {
-                        System.out.print(getElementXpath(e)+"/");
+                        System.out.print(XMLUtils.getElementXpath(e,true)+"/");
                         System.out.println(e.getAttribute("name")+" = "+e.getTextContent());
+
                     }
                 }
-                parseXML(e);
+                maskDynamicFields(e);
             }
         }
     }
 
-    private static Object[] getNextElementNode(NodeList nodeList, Integer index){
-        Object[] arr = new Object[2];
-        for(;index < nodeList.getLength(); ++index){
-            Node n = nodeList.item(index);
-            if (n instanceof Element) {
-                arr[0]= n;
-                arr[1]= index;
-                return arr;
-            }
-        } return null;
+    public void getTemplates(String sql, Object... params){
+        getTemplates(dbConnector.tableName,sql,params);
     }
 
-    /**
-     * Get Xpath to the provided element
-     * @param elt Element that path will be constucted for
-     * @return
-     */
-    private static String getElementXpath(Element elt){
-        String path = "";
-        try{
-            for (; elt != null; elt = (Element) elt.getParentNode()){
-                int idx = getElementIndex(elt);
-                String xname = elt.getTagName().toString();
 
-                if (idx >= 1) xname += "[" + idx + "]";
-                path = "/" + xname + path;
-            }
-        }catch(Exception ee){
-        }
-        return path;
-    }
-
-    /**
-     * Get Element index for XPath construction
-     * @param element Element node
-     * @return
-     */
-    private static int getElementIndex(Element element) {
-        int count = 1;
-
-        for (Node node = element.getPreviousSibling(); node != null;
-             node = node.getPreviousSibling()) {
-            if (node instanceof Element) {
-                Element e = (Element) node;
-                if (e.getTagName().equals(element.getTagName())) {
-                    count++;
-                }
-            }
-        }
-        return count;
-    }
 
     private void storeTemplates() {
 

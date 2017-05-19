@@ -10,4 +10,6 @@ public class TECore {
                                         + " or data_type = 'se.tele2.customerorderinterface.request.doc:customerOrderRequestInterfaceIncomingRequest')"
                                         + " order by transaction_log_id";
     public static String templateXMLField = "DATA";
+    public static String[] dynamicFields = {"MessageId","ConversationId","BusinessProcessId","Timestamp",
+                                                "OrderId","OrderItem","OrderItemId","OrderItemRefId","ProductInstanceId","","","","","",""};
 }

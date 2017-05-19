@@ -1,15 +1,20 @@
-import org.javalite.activejdbc.Base;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import java.io.File;
 
 /**
- * Created by alekbaga on 14.03.2017.
+ * Created by alekbaga on 06.04.2017.
  */
-public class Main {
+public class TemplateManagementTest {
     public static void main(final String[] args) throws Exception {
         DBConnector db = new DBConnector();
         TemplateManager tm = new TemplateManager(db);
@@ -22,7 +27,5 @@ public class Main {
         Document doc = builder.parse(new File("src/main/resources/sample.xml"));
         Element root = doc.getDocumentElement();
         tm.maskDynamicFields(root);
-
-
     }
 }

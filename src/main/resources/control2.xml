@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Values version="2.0">
+	<record javaclass="com.wm.util.Values" name="tns2:ServiceOrderRequest">
+		<record javaclass="com.wm.util.Values" name="tns2:Header">
+			<value name="header:MessageId">###</value>
+			<value name="header:BusinessProcessId">###</value>
+			<value name="header:ConversationId">###</value>
+			<value name="header:MessageTargetNamespace">http://www.tele2.com/ServiceOrderRequest/Canonical/v01</value>
+			<value name="header:Timestamp">###</value>
+			<value name="header:Sender">SD2_NL</value>
+			<value name="header:LegalEntity">27</value>
+			<value name="header:PayloadEncoding">Plain</value>
+		</record>
+		<record javaclass="com.wm.util.Values" name="tns2:Body">
+			<record javaclass="com.wm.util.Values" name="tns2:ServiceOrderHeader">
+				<value name="tns2:ServiceOrderId">###</value>
+				<value name="tns2:ServiceOrderDateTime">###</value>
+				<value name="tns2:ProductFamily">MOBILE</value>
+			</record>
+			<array depth="1" name="tns2:ServiceOrderItem" type="record">
+				<record javaclass="com.wm.util.Values">
+					<value name="tns2:ServiceOrderItemId">###</value>
+					<value name="tns2:ServiceOrderItemIdVersion">1</value>
+					<value name="tns2:ServiceOrderItemDateTime">###</value>
+					<value name="tns2:OperationType">Activate</value>
+					<record javaclass="com.wm.util.Values" name="tns2:Service">
+						<value name="tns2:ServiceType">Telephony</value>
+						<array depth="1" name="tns2:ServiceCharacteristic" type="record">
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">VOICETYPE</value>
+								<value name="ns1:Value">CS</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">IMSI</value>
+								<value name="ns1:Value">###</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">MSISDN</value>
+								<value name="ns1:Value">###</value>
+							</record>
+						</array>
+					</record>
+				</record>
+				<record javaclass="com.wm.util.Values">
+					<value name="tns2:ServiceOrderItemId">###</value>
+					<value name="tns2:ServiceOrderItemIdVersion">1</value>
+					<value name="tns2:ServiceOrderItemDateTime">###</value>
+					<value name="tns2:OperationType">Activate</value>
+					<record javaclass="com.wm.util.Values" name="tns2:Service">
+						<value name="tns2:ServiceType">CH</value>
+						<array depth="1" name="tns2:ServiceCharacteristic" type="record">
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">IMSI</value>
+								<value name="ns1:Value">###</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">MSISDN</value>
+								<value name="ns1:Value">###</value>
+							</record>
+						</array>
+					</record>
+				</record>
+				<record javaclass="com.wm.util.Values">
+					<value name="tns2:ServiceOrderItemId">###</value>
+					<value name="tns2:ServiceOrderItemIdVersion">1</value>
+					<value name="tns2:ServiceOrderItemDateTime">###</value>
+					<value name="tns2:OperationType">Modify</value>
+					<record javaclass="com.wm.util.Values" name="tns2:Service">
+						<value name="tns2:ServiceType">CW</value>
+						<array depth="1" name="tns2:ServiceCharacteristic" type="record">
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">STATUS</value>
+								<value name="ns1:Value">Enable</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">IMSI</value>
+								<value name="ns1:Value">###</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">MSISDN</value>
+								<value name="ns1:Value">###</value>
+							</record>
+						</array>
+					</record>
+				</record>
+				<record javaclass="com.wm.util.Values">
+					<value name="tns2:ServiceOrderItemId">###</value>
+					<value name="tns2:ServiceOrderItemIdVersion">1</value>
+					<value name="tns2:ServiceOrderItemDateTime">###</value>
+					<value name="tns2:OperationType">Activate</value>
+					<record javaclass="com.wm.util.Values" name="tns2:Service">
+						<value name="tns2:ServiceType">CLIP</value>
+						<array depth="1" name="tns2:ServiceCharacteristic" type="record">
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">IMSI</value>
+								<value name="ns1:Value">###</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">MSISDN</value>
+								<value name="ns1:Value">###</value>
+							</record>
+						</array>
+					</record>
+				</record>
+				<record javaclass="com.wm.util.Values">
+					<value name="tns2:ServiceOrderItemId">###</value>
+					<value name="tns2:ServiceOrderItemIdVersion">1</value>
+					<value name="tns2:ServiceOrderItemDateTime">###</value>
+					<value name="tns2:OperationType">Activate</value>
+					<record javaclass="com.wm.util.Values" name="tns2:Service">
+						<value name="tns2:ServiceType">CLIR</value>
+						<array depth="1" name="tns2:ServiceCharacteristic" type="record">
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">PRESENTATIONMODE</value>
+								<value name="ns1:Value">temporaryAllowed</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">IMSI</value>
+								<value name="ns1:Value">###</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">MSISDN</value>
+								<value name="ns1:Value">###</value>
+							</record>
+						</array>
+					</record>
+				</record>
+				<record javaclass="com.wm.util.Values">
+					<value name="tns2:ServiceOrderItemId">###</value>
+					<value name="tns2:ServiceOrderItemIdVersion">1</value>
+					<value name="tns2:ServiceOrderItemDateTime">###</value>
+					<value name="tns2:OperationType">Activate</value>
+					<record javaclass="com.wm.util.Values" name="tns2:Service">
+						<value name="tns2:ServiceType">INServices</value>
+						<array depth="1" name="tns2:ServiceCharacteristic" type="record">
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">OCSI</value>
+								<value name="ns1:Value">40</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">TCSI</value>
+								<value name="ns1:Value">6</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">IMSI</value>
+								<value name="ns1:Value">###</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">MSISDN</value>
+								<value name="ns1:Value">###</value>
+							</record>
+						</array>
+					</record>
+				</record>
+				<record javaclass="com.wm.util.Values">
+					<value name="tns2:ServiceOrderItemId">###</value>
+					<value name="tns2:ServiceOrderItemIdVersion">1</value>
+					<value name="tns2:ServiceOrderItemDateTime">###</value>
+					<value name="tns2:OperationType">Modify</value>
+					<record javaclass="com.wm.util.Values" name="tns2:Service">
+						<value name="tns2:ServiceType">CFB</value>
+						<array depth="1" name="tns2:ServiceCharacteristic" type="record">
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">STATUS</value>
+								<value name="ns1:Value">Enable</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">CONTROL</value>
+								<value name="ns1:Value">Subscriber</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">IMSI</value>
+								<value name="ns1:Value">###</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">MSISDN</value>
+								<value name="ns1:Value">###</value>
+							</record>
+						</array>
+					</record>
+				</record>
+				<record javaclass="com.wm.util.Values">
+					<value name="tns2:ServiceOrderItemId">###</value>
+					<value name="tns2:ServiceOrderItemIdVersion">1</value>
+					<value name="tns2:ServiceOrderItemDateTime">###</value>
+					<value name="tns2:OperationType">Modify</value>
+					<record javaclass="com.wm.util.Values" name="tns2:Service">
+						<value name="tns2:ServiceType">CFNRC</value>
+						<array depth="1" name="tns2:ServiceCharacteristic" type="record">
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">STATUS</value>
+								<value name="ns1:Value">Enable</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">CONTROL</value>
+								<value name="ns1:Value">Subscriber</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">IMSI</value>
+								<value name="ns1:Value">###</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">MSISDN</value>
+								<value name="ns1:Value">###</value>
+							</record>
+						</array>
+					</record>
+				</record>
+				<record javaclass="com.wm.util.Values">
+					<value name="tns2:ServiceOrderItemId">###</value>
+					<value name="tns2:ServiceOrderItemIdVersion">1</value>
+					<value name="tns2:ServiceOrderItemDateTime">###</value>
+					<value name="tns2:OperationType">Modify</value>
+					<record javaclass="com.wm.util.Values" name="tns2:Service">
+						<value name="tns2:ServiceType">CFNRY</value>
+						<array depth="1" name="tns2:ServiceCharacteristic" type="record">
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">STATUS</value>
+								<value name="ns1:Value">Enable</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">CONTROL</value>
+								<value name="ns1:Value">Subscriber</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">IMSI</value>
+								<value name="ns1:Value">###</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">MSISDN</value>
+								<value name="ns1:Value">###</value>
+							</record>
+						</array>
+					</record>
+				</record>
+				<record javaclass="com.wm.util.Values">
+					<value name="tns2:ServiceOrderItemId">###</value>
+					<value name="tns2:ServiceOrderItemIdVersion">1</value>
+					<value name="tns2:ServiceOrderItemDateTime">###</value>
+					<value name="tns2:OperationType">Modify</value>
+					<record javaclass="com.wm.util.Values" name="tns2:Service">
+						<value name="tns2:ServiceType">CFU</value>
+						<array depth="1" name="tns2:ServiceCharacteristic" type="record">
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">STATUS</value>
+								<value name="ns1:Value">Enable</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">CONTROL</value>
+								<value name="ns1:Value">Subscriber</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">IMSI</value>
+								<value name="ns1:Value">###</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">MSISDN</value>
+								<value name="ns1:Value">###</value>
+							</record>
+						</array>
+					</record>
+				</record>
+				<record javaclass="com.wm.util.Values">
+					<value name="tns2:ServiceOrderItemId">###</value>
+					<value name="tns2:ServiceOrderItemIdVersion">1</value>
+					<value name="tns2:ServiceOrderItemDateTime">###</value>
+					<value name="tns2:OperationType">Modify</value>
+					<record javaclass="com.wm.util.Values" name="tns2:Service">
+						<value name="tns2:ServiceType">BarringODB</value>
+						<array depth="1" name="tns2:ServiceCharacteristic" type="record">
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">ODBPREMIUM</value>
+								<value name="ns1:Value">none</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">ODBOUTGOING</value>
+								<value name="ns1:Value">none</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">ODBINCOMING</value>
+								<value name="ns1:Value">none</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">ODBROAMING</value>
+								<value name="ns1:Value">none</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">ODBPACKET</value>
+								<value name="ns1:Value">none</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">VOICETYPE</value>
+								<value name="ns1:Value">CS</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">IMSI</value>
+								<value name="ns1:Value">###</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">MSISDN</value>
+								<value name="ns1:Value">###</value>
+							</record>
+						</array>
+					</record>
+				</record>
+				<record javaclass="com.wm.util.Values">
+					<value name="tns2:ServiceOrderItemId">###</value>
+					<value name="tns2:ServiceOrderItemIdVersion">1</value>
+					<value name="tns2:ServiceOrderItemDateTime">###</value>
+					<value name="tns2:OperationType">Modify</value>
+					<record javaclass="com.wm.util.Values" name="tns2:Service">
+						<value name="tns2:ServiceType">BarringSCB</value>
+						<array depth="1" name="tns2:ServiceCharacteristic" type="record">
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">INCOMING</value>
+								<value name="ns1:Value">Disable</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">OUTGOING</value>
+								<value name="ns1:Value">Disable</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">INTERNATIONAL</value>
+								<value name="ns1:Value">Disable</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">ROAMING</value>
+								<value name="ns1:Value">Disable</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">OUTINT_EXHC</value>
+								<value name="ns1:Value">Disable</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">CONTROL</value>
+								<value name="ns1:Value">Subscriber</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">IMSI</value>
+								<value name="ns1:Value">###</value>
+							</record>
+							<record javaclass="com.wm.util.Values">
+								<value name="ns1:Name">MSISDN</value>
+								<value name="ns1:Value">###</value>
+							</record>
+						</array>
+					</record>
+				</record>
+			</array>
+		</record>
+	</record>
+</Values>
